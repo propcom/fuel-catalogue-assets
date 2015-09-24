@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+body {
+    background-color: #e0e0e0;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 24px;
+    padding: 3px 12px;
+    font-family: Montserrat-Web, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn.btn-primary {
+    background-color: #4cc0bf;
+}
+
+.btn.btn-success {
+    background-color: #51a351;
+}
+
+.btn.btn-danger {
+    background-color: #bd362f;
+}
+
+.btn-half {
+    width: 50%;
+    display: inline-block;
+}
+
+.btn.btn-thin {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+}
+
+section.left {
+    float: left;
+    overflow-y: scroll;
+    width: 20%;
+}
+
+section.right {
+    display: inline-block;
+    width: 80%;
+    float: right;
+}
+
+#create-hotspot {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#create-form {
+    padding-top: 0px;
+}
+
+#edit-form {
+    padding-bottom: 100px;
+}
+
+
+.hotspot-list {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hotspot-list__item {
+    list-style-type: none;
+    padding: 30px 0;
+}
+
+.hotspot-list__item h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+.hotspot-list__item p {
+    line-height: 160%;
+}
+
+#wrapper {
+    position: relative;
+    padding: 0;
+    outline: 1px solid #999;
+}
+#wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#paper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+input[type=text], textarea {
+    background-color: #fff;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    border: 1px solid gray;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+}
+
+form {
+    clear: both;
+    float: none;
+    padding: 30px 20px;
+}
+
+form .button-group {
+    clear: both;
+    float: none;
+    display: block;
+}
