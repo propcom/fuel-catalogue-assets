@@ -6,4 +6,6 @@ $(document).ready(function() {
 
         imageInput.val(uploadedImgId);
     });
+
+    $('.js-colour-picker').colorPicker();
 });
