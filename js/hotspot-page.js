@@ -137,8 +137,7 @@ $(function(){
 			drawHotspots(document.getElementById('catalogue-split-one'), split_one, 600);
 			drawHotspots(document.getElementById('catalogue-split-two'), split_two, 600);
 		}
-		else{
-			drawHotspots(el, hotspots);
-		}
+
+		drawHotspots(el, hotspots);
 	});
 });
