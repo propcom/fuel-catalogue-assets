@@ -119,65 +119,26 @@ $(function(){
 			hotspots.push(hotspot);
 		});
 
+		if($('.js-hotspot-container').data('split')) { // If split image
+			var split_one = [];
+			$('.js-split-one').find('.js-hotspot').each(function(){
+				var hotspot = new Hotspot();
+				hotspot.init($(this));
 
-		drawHotspots(el, hotspots);
+				split_one.push(hotspot);
+			});
+			var split_two = [];
+			$('.js-split-two').find('.js-hotspot').each(function(){
+				var hotspot = new Hotspot();
+				hotspot.init($(this));
 
-		/*if(data.data.split_image === '1') { // If split image
-			drawHotspots(newDiv1, data.data.hotspots.split_one, 600);
-			drawHotspots(newDiv2, data.data.hotspots.split_two, 600);
-		}*/
+				split_two.push(hotspot);
+			});
+			drawHotspots(document.getElementById('catalogue-split-one'), split_one, 600);
+			drawHotspots(document.getElementById('catalogue-split-two'), split_two, 600);
+		}
+		else{
+			drawHotspots(el, hotspots);
+		}
 	});
 });
-
-/**************** SPLIT IMAGE STUFFS *******************
-
-newEl = document.createElement('div');
-newImg = document.createElement('img');
-newImg.className += 'scale-with-grid catalogue__main';
-
-newImg.onload = function(){
-	// Single Image
-	newEl.className += 'catalogue-slide is-loaded ' + orientation;
-	newEl.appendChild(newImg);
-	nativeThis.appendChild(newEl);
-
-	if(data.data.split_image === '1') { // If split image
-		newDiv1 = document.createElement('div');
-		newDiv2 = document.createElement('div');
-
-		newDiv1.style.backgroundImage = "url("+data.data.image.url+")";
-		newDiv2.style.backgroundImage = "url("+data.data.image.url+")";
-
-		newDiv1.className += 'catalogue__split catalogue__split--1';
-		newDiv2.className += 'catalogue__split catalogue__split--2';
-
-		newEl.appendChild(newDiv1);
-		newEl.appendChild(newDiv2);
-		nativeThis.appendChild(newEl);
-	}
-
-	elementTimeOuts(old, newEl, orientation);
-
-	var stateObj = { cataloguePage: page };
-	!document.documentElement.className.match('lt-ie9') && history.pushState(stateObj, 'page'+page, '/catalogue/page/'+page);
-
-	setTimeout(function(){
-		drawHotspots(newEl, data.data.hotspots.all);
-
-		if(data.data.split_image === '1') { // If split image
-			drawHotspots(newDiv1, data.data.hotspots.split_one, 600);
-			drawHotspots(newDiv2, data.data.hotspots.split_two, 600);
-		}
-
-		if(old.length){
-			old.get(0).parentNode.removeChild(old.get(0));
-		}
-		$catalogElem.data('active', data.data.id);
-
-		index < 10 ? document.getElementById('js-catalogue-current-page').innerHTML = '0'+index : document.getElementById('js-catalogue-current-page').innerHTML = +index;
-	}, 382);
-}
-
-newImg.src = data.data.image.url;
-
-*******************************************************/
