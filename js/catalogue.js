@@ -2,12 +2,6 @@ document.getElementById('daisy-catalogue') && (function($){
 
 	document.querySelector('.touch') && (function(){
 
-		$(window).width() < 480 && (function(){
-
-			window.location = '/category/view/39';
-
-		}());
-
 		var hammerScript = document.createElement("script"),
 			catalogueEl =  document.getElementById('daisy-catalogue'),
 			defer = function(callback){
