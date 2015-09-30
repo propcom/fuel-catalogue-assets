@@ -4,6 +4,7 @@
  */
 
 var pageId = $("body").data("hotspot-page-id");
+var modelId = $("body").data("page-model-id");
 
 var paper = {
     paperDiv: $("#paper"), /** The Raphael Paper div **/
@@ -249,7 +250,7 @@ var hotspots = {
         var that = this;
         $.ajax({
             type: "POST",
-            url: "/admin/catalogue/manage/api/pages/" + pageId + "/hotspots.json",
+            url: "/admin/catalogue/manage/api/pages/" + modelId + "/hotspots.json",
             data: $(e.target).serialize()
         }).success(function(data) {
             if(data.success) {
