@@ -216,6 +216,7 @@ var hotspots = {
     /** This updates a specfic hotspot in the list - fetching the latest information and replacing it. Useful for post-update **/
     updateHotspotInList: function(hotspotId) {
         var listItem = $(".hotspot-list__item[data-hotspot-id=" + hotspotId + "]");
+        var self = this;
         if ( ! listItem) {
             console.log("Couldn't find Hotspot " + hotspotId + " in list."); 
             return false;
@@ -224,7 +225,7 @@ var hotspots = {
             type: "DELETE",
             url: "/admin/catalogue/manage/api/pages/" + pageId + "/hotspots/" + hotspotId + ".json"
         }).success(function(data) {
-            listItem.replace(this.getHotspotHtml(data.data));
+            listItem.replaceWith(self.getHotspotHtml(data.data));
         });
     },
 
@@ -368,7 +369,8 @@ var hotspots = {
         }).success(function(data) {
             if(data.success) {
                 /** Update the hotspot via ajax to match the data they just inputted **/
-                that.updateHotspotInList(hotspotId);
+                var listItem = $(".hotspot-list__item[data-hotspot-id=" + hotspotId + "]");
+                listItem.replaceWith(that.getHotspotHtml(data.data));
             } else {
                 alert(data.message);
             }
