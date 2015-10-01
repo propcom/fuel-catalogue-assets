@@ -11,7 +11,7 @@ $(function(){
 			dataType: 'JSON',
 			type: 'POST',
 			success: function(data){
-				form.replaceWith($("<span>"+ data.message +"</span>"));
+				form.replaceWith($('<span class="success">'+ data.message +'</span>'));
 			},
 			error: function(data){
 				$(".js-form-page-error").text(data.responseText);
