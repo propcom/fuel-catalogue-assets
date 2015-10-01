@@ -121,14 +121,14 @@ $(function(){
 
 		if($('.js-hotspot-container').data('split')) { // If split image
 			var split_one = [];
-			$('.js-split-one').find('.js-hotspot').each(function(){
+			$('.js-split-one').find('.js-hotspot-split').each(function(){
 				var hotspot = new Hotspot();
 				hotspot.init($(this));
 
 				split_one.push(hotspot);
 			});
 			var split_two = [];
-			$('.js-split-two').find('.js-hotspot').each(function(){
+			$('.js-split-two').find('.js-hotspot-split').each(function(){
 				var hotspot = new Hotspot();
 				hotspot.init($(this));
 
